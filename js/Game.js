@@ -45,12 +45,20 @@ class Game {
         const screenOverlay = document.querySelector("#overlay");
         screenOverlay.style.display = "flex";
         const gameOverMessage = document.querySelector("#game-over-message");
+        
         if (win) {
             gameOverMessage.textContent = "Congrats, you win!";
             screenOverlay.className = "win";
+            const colors = ["green", "orange", "blue", "purple", "pink"];
+            function changeBackgroundColor() { 
+                const color = Math.floor(Math.random() * colors.length); 
+                document.getElementById("overlay").style.backgroundColor = colors[color];
+            }
+            changeBackgroundColor();
         } else {
             gameOverMessage.textContent = "Sorry you lose, try again!";
             screenOverlay.className = "lose";
+            document.getElementById("overlay").style.backgroundColor = "red";
         }
         this.resetGame();
     }
