@@ -73,7 +73,7 @@ class Game {
             screenOverlay.className = "win";
             
             // Code for the background color to change colors when the player wins. If the player loses, the background color stays red
-            const colors = ["green", "orange", "blue", "purple", "pink"];
+            const colors = ["green", "yellow", "orange", "blue", "purple", "pink"];
             let colorIndex = 0;
             let colorInterval;
             const changeBackgroundColor = () => {
