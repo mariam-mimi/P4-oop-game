@@ -1,1 +1,3 @@
 # P4-oop-game
+
+Unit 4 project for the TeamTreeeHouse JavaScript Techdegree. The program is a phrase guessing game! You have five guesses to guess the phrase. When you win, the screen will tell you that you won and the background will change colors! iI you lose, the screen will tell you that you lost and the background will stay red. Try using your keyboard to guess letters rather than clicking the buttons on the screen!
