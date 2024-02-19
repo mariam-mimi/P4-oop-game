@@ -49,12 +49,21 @@ class Game {
         if (win) {
             gameOverMessage.textContent = "Congrats, you win!";
             screenOverlay.className = "win";
+            
             const colors = ["green", "orange", "blue", "purple", "pink"];
-            function changeBackgroundColor() { 
-                const color = Math.floor(Math.random() * colors.length); 
-                document.getElementById("overlay").style.backgroundColor = colors[color];
-            }
-            changeBackgroundColor();
+            let colorIndex = 0;
+            let colorInterval;
+            const changeBackgroundColor = () => {
+                document.getElementById("overlay").style.backgroundColor = colors[colorIndex];
+                colorIndex++;
+            };
+            colorInterval = setInterval(changeBackgroundColor, 1000);
+            const startGame = () => {
+                clearInterval(colorInterval);
+                document.querySelector("#btn__reset").removeEventListener("click", startGame);
+            };
+            document.querySelector("#btn__reset").addEventListener("click", startGame);
+        
         } else {
             gameOverMessage.textContent = "Sorry you lose, try again!";
             screenOverlay.className = "lose";
